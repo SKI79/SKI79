@@ -1,7 +1,7 @@
 ### Hi! 👋
 Welcome to my GitHub profile. This is the place I trust with my coding projects. Don't see anything? I haven't published a project yet!
 
-What I'm working on: My new game! Check my YouTube channel for updates!
+What I'm working on: Some personal projects. Check my YouTube channel for updates!
 
 
 <!--
