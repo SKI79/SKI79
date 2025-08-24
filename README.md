@@ -1,8 +1,6 @@
 ### Hi! 👋
 Welcome to my GitHub profile. This is the place I trust with my coding projects. Don't see anything? I haven't published a project yet!
 
-What I'm working on: Some personal projects. Check my YouTube channel for updates!
-
 
 <!--
 **SKI79/SKI79** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
