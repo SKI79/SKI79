@@ -1,5 +1,5 @@
 ### Hi! 👋
-Welcome to my GitHub profile. This is the place I trust with my coding projects. Don't see anything? I haven't published a project yet!
+Welcome to my GitHub profile. I don't have a lot of public projects here, but I'm looking to make some. Thanks for stopping by!
 
 
 <!--
