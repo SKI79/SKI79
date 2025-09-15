@@ -59,3 +59,4 @@ print("Most Common:", largestNumberKey, "with", largestCount, "occurrences")
 print("Calculations took", diff.total_seconds(), "seconds to compute.")
 print("-----------------------")
 # Prints out statistics
+input("Press enter to finish...")
