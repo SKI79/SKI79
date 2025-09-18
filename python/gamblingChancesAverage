@@ -1,0 +1,56 @@
+import random
+import datetime
+count = 0
+print("What percentage do you have to win?")
+beforePercent = input("")
+try:
+    beforePercentInt = float(beforePercent)
+except:
+    print("Number was not a valid percentage. Exiting...")
+    exit()
+if beforePercentInt > 100.0:
+    print("Number too high. Exiting...")
+    exit()
+print('How much does it cost?')
+moneyCost = input("")
+try:
+    moneyCostInt = float(moneyCost)
+except:
+    print('Invalid response. Exiting...')
+    exit()
+afterPercent = beforePercentInt / 100
+chances = 1 / afterPercent
+countOption = "y"
+print("How many times should the program run? Higher numbers for better results:")
+runCount = input("")
+try:
+    runCountInt = int(runCount)
+except:
+    print("Invalid response. Exiting...")
+    exit()
+print(f"Chances: 1 in {chances}")
+countAverages = 0
+costAverages = 0
+totalRuns = 0
+startDate = datetime.datetime.now()
+for i in range(runCountInt):
+    while True:
+        randomNumber = random.randint(1,int(chances))
+        if countOption == "y":
+            count = count + 1
+        if randomNumber == 1:
+            endDate = datetime.datetime.now()
+            diff = endDate - startDate
+            if countOption == "y":
+                countAverages = countAverages + count
+                costAverages = costAverages + (count * moneyCostInt)
+                totalRuns = totalRuns + 1
+                print(totalRuns)
+                count = 0
+                break
+endDate = datetime.datetime.now()
+diff = endDate - startDate
+totalSeconds = diff.total_seconds()
+print(f"Successfully calculated! ({totalSeconds} seconds)")
+print(f"On average, it took {countAverages / totalRuns} tries for success.")
+print(f"It also cost about {costAverages / totalRuns} to get success.")
