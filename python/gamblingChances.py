@@ -21,8 +21,8 @@ option = input("Brute force (run until success) or run set amount of times? (bru
 countOption = input("Count how many tries it took? (required for cost calculation) (y/n):")
 print(f"Chances: 1 in {chances}")
 if option == "brute":
-    startDate = datetime.datetime.now()
     while True:
+        startDate = datetime.datetime.now()
         randomNumber = random.randint(1,chances)
         if countOption == "y":
             count = count + 1
