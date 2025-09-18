@@ -1,0 +1,58 @@
+# DISCLAIMER: I DO NOT SUPPORT OR ENCOURAGE FRVILOUS GAMBLING. ALWAYS GAMBLE RESPONSIBLY. THIS IS A TOOL I MADE FOR FUN. I ASSUME NO RESPONSIBILITY FOR ANYTHING DONE WITH THIS TOOL.
+import random
+import datetime
+count = 0
+print("What percentage do you have to win?")
+beforePercent = input("")
+try:
+    beforePercentInt = float(beforePercent)
+except:
+    print("Number was not a valid percentage. Exiting...")
+    exit()
+afterPercent = beforePercentInt / 100
+chances = 1 / afterPercent
+option = input("Brute force (run until success) or run set amount of times? (brute/set):")
+countOption = input("Count how many tries it took? (y/n):")
+print(f"Chances: 1 in {chances}")
+if option == "brute":
+    startDate = datetime.datetime.now()
+    while True:
+        randomNumber = random.randint(1,chances)
+        if countOption == "y":
+            count = count + 1
+        if randomNumber == 1:
+            endDate = datetime.datetime.now()
+            diff = endDate - startDate
+            if countOption == "y":
+                print(f"Took {count} tries.")
+            print(f"Success! Processing took {diff.total_seconds()} seconds. Press enter to continue.")
+            input("")
+            exit()
+elif option == "set":
+    print("How many times to run?")
+    times = input("")
+    try:
+        timesInt = int(times)
+    except:
+        print("Invalid response. Exiting...")
+        exit()
+    startDate = datetime.datetime.now()
+    for i in range(timesInt):
+        randomNumber = random.randint(1,chances)
+        if countOption == "y":
+            count = count + 1
+        if randomNumber == 1:
+            endDate = datetime.datetime.now()
+            diff = endDate - startDate
+            if countOption == "y":
+                print(f"Took {count} tries.")
+            print(f"Success! Processing took {diff.total_seconds()} seconds. Press enter to exit.")
+            input("")
+            exit()
+    print("Number not found. Press enter to exit.")
+    input("")
+    exit()
+    pass
+else:
+    print("Invalid option selected. Exiting...")
+    exit()
