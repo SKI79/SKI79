@@ -1,4 +1,3 @@
-# DISCLAIMER: I DO NOT SUPPORT OR ENCOURAGE FRVILOUS GAMBLING. ALWAYS GAMBLE RESPONSIBLY. THIS IS A TOOL I MADE FOR FUN. I ASSUME NO RESPONSIBILITY FOR ANYTHING DONE WITH THIS TOOL.
 import random
 import datetime
 count = 0
@@ -9,10 +8,17 @@ try:
 except:
     print("Number was not a valid percentage. Exiting...")
     exit()
+print('How much does it cost?')
+moneyCost = input("")
+try:
+    moneyCostInt = float(moneyCost)
+except:
+    print('Invalid response. Exiting...')
+    exit()
 afterPercent = beforePercentInt / 100
 chances = 1 / afterPercent
 option = input("Brute force (run until success) or run set amount of times? (brute/set):")
-countOption = input("Count how many tries it took? (y/n):")
+countOption = input("Count how many tries it took? (required for cost calculation) (y/n):")
 print(f"Chances: 1 in {chances}")
 if option == "brute":
     startDate = datetime.datetime.now()
@@ -25,6 +31,7 @@ if option == "brute":
             diff = endDate - startDate
             if countOption == "y":
                 print(f"Took {count} tries.")
+                print(f"Costs {count * moneyCostInt} for {count} tries.")
             print(f"Success! Processing took {diff.total_seconds()} seconds. Press enter to continue.")
             input("")
             exit()
